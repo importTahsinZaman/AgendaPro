@@ -1,1 +1,0 @@
-jpackage --module-path C:\Users\tahsi\Desktop\javafx-jmods-11.0.2 --add-modules ALL-MODULE-PATH --input C:\test --main-jar AgendaPro.jar --main-class application.Main --dest Desktop --name AgendaPro-8.0 --icon C:\test\icon.png --type exe --win-console --win-shortcut

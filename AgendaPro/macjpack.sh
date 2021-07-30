@@ -1,0 +1,1 @@
+jpackage --module-path .\javafx-jmods-11.0.2 --add-modules ALL-MODULE-PATH --input . --main-jar AgendaPro.jar --main-class application.Main --dest Desktop --name AgendaPro-8.0 --type pkg
