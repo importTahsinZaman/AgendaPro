@@ -79,11 +79,11 @@
 		</AnchorPane>
 		<AnchorPane layoutX="168.0" prefHeight="677.0" prefWidth="679.0" style="-fx-background-color: #282629;">
 			<children>
-				<TextArea fx:id="txt1" layoutX="12.0" layoutY="27.0" onMouseExited="#txt1write" prefHeight="182.0" prefWidth="655.0" style="-fx-border-color: #deaf9d;">
+				<TextArea fx:id="txt1" layoutX="11.0" layoutY="27.0" onKeyTyped="#txt1write" prefHeight="182.0" prefWidth="655.0" style="-fx-border-color: #deaf9d;">
                <font>
                   <Font name="Leelawadee UI" size="12.0" />
                </font></TextArea>
-				<TextArea fx:id="txt2" layoutX="8.0" layoutY="239.0" onMouseExited="#txt2write" prefHeight="182.0" prefWidth="655.0" style="-fx-border-color: #deaf9d;">
+				<TextArea fx:id="txt2" layoutX="11.0" layoutY="239.0" onKeyTyped="#txt2write" prefHeight="182.0" prefWidth="655.0" style="-fx-border-color: #deaf9d;">
                <font>
                   <Font name="Leelawadee UI" size="12.0" />
                </font></TextArea>
@@ -97,7 +97,7 @@
 						<Font name="Leelawadee UI" size="16.0" />
 					</font>
 				</Button>
-				<TextArea fx:id="txt3" layoutX="8.0" layoutY="453.0" onMouseExited="#txt3write" prefHeight="182.0" prefWidth="655.0" style="-fx-border-color: #deaf9d;">
+				<TextArea fx:id="txt3" layoutX="11.0" layoutY="453.0" onKeyTyped="#txt3write" prefHeight="182.0" prefWidth="655.0" style="-fx-border-color: #deaf9d;">
                <font>
                   <Font size="12.0" />
                </font></TextArea>

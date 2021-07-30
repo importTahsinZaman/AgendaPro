@@ -198,6 +198,57 @@ public class Controller {
 			label3.setText(weekDays[findWeekDay(monthDay, java.util.Arrays.asList(months).indexOf(month))] + ", "
 					+ month + " " + monthDay);
 		}
+		String checkDay = String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+		
+		if (!label3.getText().contains(checkDay) && !label2.getText().contains(checkDay) && !label1.getText().contains(checkDay)) {
+			monthDay -= 3;
+
+			checkMonthDaysMin();
+
+			label3.setText(weekDays[findWeekDay(monthDay, java.util.Arrays.asList(months).indexOf(month))] + ", " + month
+					+ " " + monthDay);
+
+			monthDay--;
+
+			checkMonthDaysMin();
+
+			label2.setText(weekDays[findWeekDay(monthDay, java.util.Arrays.asList(months).indexOf(month))] + ", " + month
+					+ " " + monthDay);
+
+			monthDay--;
+
+			checkMonthDaysMin();
+
+			label1.setText(weekDays[findWeekDay(monthDay, java.util.Arrays.asList(months).indexOf(month))] + ", " + month
+					+ " " + monthDay);
+
+			monthDay += 2;
+		}
+		
+		if (!label3.getText().contains(checkDay) && !label2.getText().contains(checkDay) && !label1.getText().contains(checkDay)) {
+			for (int q = 0; q<2; q++) {
+				monthDay++;
+
+				checkMonthDaysMax();
+
+				label1.setText(weekDays[findWeekDay(monthDay, java.util.Arrays.asList(months).indexOf(month))] + ", "
+						+ month + " " + monthDay);
+
+				monthDay++;
+
+				checkMonthDaysMax();
+
+				label2.setText(weekDays[findWeekDay(monthDay, java.util.Arrays.asList(months).indexOf(month))] + ", "
+						+ month + " " + monthDay);
+
+				monthDay++;
+
+				checkMonthDaysMax();
+
+				label3.setText(weekDays[findWeekDay(monthDay, java.util.Arrays.asList(months).indexOf(month))] + ", "
+						+ month + " " + monthDay);
+			}
+		}
 		agendaRead();
 	}
 
