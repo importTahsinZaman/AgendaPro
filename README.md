@@ -8,4 +8,4 @@ Installation instructions:
 
 Windows: Just donwload the windows installer from this repository
 
-Mac: Download
+Mac: Download the git repo, then run the 
