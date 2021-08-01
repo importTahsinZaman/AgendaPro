@@ -18,6 +18,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
+//This is the controller that controls all the logic inside of the GUI (linked through the fxml file)
+
 public class Controller {
 
 	public static int weekDay = 0; // 0 = Friday, 1 = Saturday, 2 = Sunday, 3 = Monday, 4 = Tuesday, 5 = Wednesday,
@@ -62,6 +64,8 @@ public class Controller {
 		return java.util.Arrays.asList(weekDays).indexOf(firstLetter + remainingLetters);
 	}
 
+	//Checks if the current value of monthDay exceeds the maximum number of days in the current month
+	//If yes, goes to next month
 	public static void checkMonthDaysMax() {
 		if (monthDay > daysInMonths[java.util.Arrays.asList(months).indexOf(month)]) {
 			month = months[(java.util.Arrays.asList(months).indexOf(month)) + 1];
@@ -69,7 +73,9 @@ public class Controller {
 			weekDay = findWeekDay(monthDay, (java.util.Arrays.asList(months).indexOf(month)));
 		}
 	}
-
+	
+	//Checks if the current value of monthDay is less than 0
+	//If no, goes to previous month
 	public static void checkMonthDaysMin() {
 		if (monthDay <= 0) {
 			month = months[(java.util.Arrays.asList(months).indexOf(month)) - 1];
@@ -78,6 +84,9 @@ public class Controller {
 		}
 	}
 
+	//Reads the text document where the agenda data is stored and displays text accordinly to the text areas
+	//First line (DO NOT REMOVE LINE) is used as a place holder for adding new lines later on
+	// "#~#" is used as a custom new line "character" to differentiate between new lines in the text area and new lines in the text file
 	public void agendaRead() throws FileNotFoundException {
 		try {
 			Path filePath = Paths.get("testDocument.txt");
@@ -126,6 +135,8 @@ public class Controller {
 		}
 	}
 
+	//This is called whenever a new character has been written in one of the text areas.
+	//Looks through the file for the correct Month and month day and saves text accordingly.
 	public void checkAgendaWrite(int p) throws IOException {
 		Path filePath = Paths.get("testDocument.txt");
 		Scanner fileScanner = new Scanner(filePath);
@@ -160,6 +171,8 @@ public class Controller {
 		}
 	}
 
+	//txt1write, txt2write, txt3write all call checkAgendaWrite with their corresponding array indexes, 0,1,2
+	//The arrays these numbers correspond to are (in checkAgendaWrite) labels and textAreas.s
 	public void txt1write() throws IOException {
 		checkAgendaWrite(0);
 	}
@@ -171,7 +184,9 @@ public class Controller {
 	public void txt3write() throws IOException {
 		checkAgendaWrite(2);
 	}
-
+	
+	//Run on initialization of the application
+	//Goes to the current day in the app
 	@FXML
 	public void initialize() throws IOException {
 		pressMonthButton(months[Calendar.getInstance().get(Calendar.MONTH)], true);
@@ -252,6 +267,8 @@ public class Controller {
 		agendaRead();
 	}
 
+	//Changes the month based on whichever month button is clicked
+	//Month button methods are below (January to December)
 	public void pressMonthButton(String tempMonth, boolean initialize) throws IOException {
 		if (initialize) {
 			month = tempMonth;
@@ -348,6 +365,7 @@ public class Controller {
 		pressMonthButton("December", false);
 	}
 
+	//Shows the next three days of the month when the next button is clicked
 	public void nextButton(ActionEvent e) throws IOException {
 
 		txt1.clear();
@@ -378,6 +396,7 @@ public class Controller {
 		agendaRead();
 	}
 
+	//Shows the previous three days when the previous button is clicked
 	public void previousButton(ActionEvent e) throws IOException {
 
 		txt1.clear();
