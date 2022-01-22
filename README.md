@@ -6,6 +6,6 @@ AgendaPro was created using JavaFX and Scenebuilder.
 
 Installation instructions:
 
-Windows: Just donwload the windows installer from this repository
+Windows: Download windows installer from this repository
 
-Mac: Download the git repo, then run the macjpack.sh through terminal
+Mac: Download the git repo, then run macjpack.sh through terminal
